@@ -1,0 +1,7 @@
+---
+repos:
+{% for repo in results.repos %}
+  - alias: "{{ repo.alias }}"
+    enabled: "{{ repo.enabled }}"
+    uri: "{{ repo.uri }}"
+{% endfor %}

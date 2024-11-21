@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: no
+  become: true
+
+  tasks:
+
+    - name: Debug
+      debug:
+        msg: "zypper addrepo -f {{ (item.enabled | default('1') == '1') | ternary('-e', '-d') }} {{ item.uri }} {{ item.alias }}"
+      loop: "{{ repos }}"
+
+    - name: Clean repos
+      shell: |
+        zypper rr -a
+
+    - name: Add repos
+      shell: |
+        zypper addrepo -f {{ (item.enabled | default('1') == '1') | ternary('-e', '-d') }} {{ item.uri }} {{ item.alias }}
+      loop: "{{ repos }}"
+
+
+#
+# ansible-playbook -i inventory.yaml playbook-addrepo.yaml
+#

@@ -1,0 +1,20 @@
+---
+repos:
+  - alias: "repo-debug"
+    uri: "http://download.opensuse.org/debug/tumbleweed/repo/oss/"
+  - alias: "repo-non-oss"
+    uri: "http://download.opensuse.org/tumbleweed/repo/non-oss/"
+  - alias: "repo-openh264"
+    uri: "http://codecs.opensuse.org/openh264/openSUSE_Tumbleweed"
+  - alias: "repo-oss"
+    uri: "http://download.opensuse.org/tumbleweed/repo/oss/"
+  - alias: "repo-source"
+    uri: "http://download.opensuse.org/source/tumbleweed/repo/oss/"
+  - alias: "repo-update"
+    uri: "http://download.opensuse.org/update/tumbleweed/"
+  - alias: application-geo
+    uri: https://download.opensuse.org/repositories/Application:/Geo/openSUSE_Tumbleweed/
+  - alias: network
+    uri: https://download.opensuse.org/repositories/network/openSUSE_Tumbleweed/
+  - alias: science
+    uri: https://download.opensuse.org/repositories/science/openSUSE_Tumbleweed/

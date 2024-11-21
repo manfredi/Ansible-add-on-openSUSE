@@ -1,0 +1,12 @@
+all:
+  children:
+    micro-os-A:
+      hosts:
+        vm-micro-os-slave-1:
+        vm-micro-os-slave-2:
+        vm-micro-os-slave-3:
+    micro-os-B:
+      hosts:
+        vm-micro-os-slave-4:
+        vm-micro-os-slave-5:
+        vm-micro-os-slave-6:

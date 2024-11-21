@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network connections='1'>
+  <name>default</name>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='virbr0' stp='on' delay='0'/>
+  <mac address='52:54:00:76:56:3c'/>
+  <ip address='192.168.122.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.122.2' end='192.168.122.254'/>
+      <host mac='52:54:00:d0:36:e0' name="vm-micro-os-master"  ip="192.168.122.40" />
+      <host mac='52:54:00:d0:36:e1' name="vm-micro-os-slave-1" ip="192.168.122.41" />
+      <host mac='52:54:00:d0:36:e2' name="vm-micro-os-slave-2" ip="192.168.122.42" />
+      <host mac='52:54:00:d0:36:e3' name="vm-micro-os-slave-3" ip="192.168.122.43" />
+      <host mac='52:54:00:d0:36:e4' name="vm-micro-os-slave-4" ip="192.168.122.44" />
+      <host mac='52:54:00:d0:36:e5' name="vm-micro-os-slave-5" ip="192.168.122.45" />
+      <host mac='52:54:00:d0:36:e6' name="vm-micro-os-slave-6" ip="192.168.122.46" />
+    </dhcp>
+  </ip>
+</network>

@@ -1,0 +1,27 @@
+---
+- hosts: all
+  gather_facts: no
+  become: true
+
+  tasks:
+
+    - name: Get Repos List
+      zypper_repos:
+        show_enabled_only: no
+      register: results
+
+    - name: Debug
+      debug:
+        msg: "alias: {{ item.alias }}, enabled: {{ item.enabled }}, uri: {{ item.uri }}"
+      loop: "{{ results.repos }}"
+
+    - name: Create repo files into dump folder
+      template:
+        src: repos.j2
+        dest: ./dump/{{ inventory_hostname }}.yaml
+      delegate_to: localhost
+
+
+#
+# ansible-playbook -i inventory.yml playbook-getrepo.yaml
+#
